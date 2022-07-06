@@ -19,7 +19,7 @@ namespace DataAccess
                 using(SqlCommand cmd = new ())
                 {
                     cmd.Connection = cn;
-                    cmd.CommandText = "spInsert_Member";
+                    cmd.CommandText = "spInsertToTables";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@FirstName", name);
