@@ -32,10 +32,8 @@ namespace Esta_AFCentral
             model.Phone = Console.ReadLine();
             Console.WriteLine("Enter the programme name: ");
             model.Name = Console.ReadLine();
-            Console.WriteLine("Enter the programme duration: ");
-            model.Duration = Console.ReadLine();
 
-            connection.insert(model.FirstName, model.LastName, model.Position, model.Email, model.Phone, model.Name, model.Duration);
+            connection.insert(model.FirstName, model.LastName, model.Position, model.Email, model.Phone, model.Name);
             Console.WriteLine("Would you like to make another entry (Y/N): ");
             string anotherEntry = Console.ReadLine();
 

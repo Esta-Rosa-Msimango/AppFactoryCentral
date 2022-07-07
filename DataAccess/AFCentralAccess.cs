@@ -12,7 +12,7 @@ namespace DataAccess
 
         public string MyConnectionString { get; init; }
 
-        public void insert(string name, string surname, string position, string email, string phone, string ProgrammeName, string ProgrammeDuration)
+        public void insert(string name, string surname, string position, string email, string phone, string ProgrammeName)
         {
             using(SqlConnection cn = new (MyConnectionString))
             {
@@ -22,13 +22,14 @@ namespace DataAccess
                     cmd.CommandText = "spInsertToTables";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                    //member table
                     cmd.Parameters.AddWithValue("@FirstName", name);
                     cmd.Parameters.AddWithValue("@LastName", surname);
                     cmd.Parameters.AddWithValue("@Position", position);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@phone", phone);
+                    //programme table 
                     cmd.Parameters.AddWithValue("@Name", ProgrammeName);
-                    cmd.Parameters.AddWithValue("@Duration", ProgrammeDuration);
 
                     cn.Open();
                     cmd.ExecuteNonQuery();

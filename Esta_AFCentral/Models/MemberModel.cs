@@ -28,8 +28,6 @@ namespace Esta_AFCentral.Models
         [StringLength(50)]
 		public string Phone { get; set; }
 		public string Name { get; set; }
-		public string Duration { get; set; }
-
 	}
 }
 
