@@ -29,7 +29,7 @@ namespace DataAccess
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@phone", phone);
                     //programme table 
-                    cmd.Parameters.AddWithValue("@Name", ProgrammeName);
+                    cmd.Parameters.AddWithValue("@ProgrammeName", ProgrammeName);
 
                     cn.Open();
                     cmd.ExecuteNonQuery();

@@ -4,7 +4,7 @@ using DataAccess;
 
 namespace Esta_AFCentral.Models
 {
-	public class MemberModel
+	internal class MemberModel
 	{
 		[Key]
 		public int MemberId { get; private set; }
@@ -27,7 +27,7 @@ namespace Esta_AFCentral.Models
         [Phone]
         [StringLength(50)]
 		public string Phone { get; set; }
-		public string Name { get; set; }
+		public string ProgrammeName { get; set; }
 	}
 }
 
