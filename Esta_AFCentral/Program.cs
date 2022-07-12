@@ -8,14 +8,10 @@ namespace Esta_AFCentral
     {
         static void Main(string[] args)
         {
-            string terminate = "";
-            do
-            {
-                terminate = Entry();
-            }while (terminate != "N");
+            Entry();
         }
 
-        public static string Entry()
+        public static void Entry()
         {
             AFCentralAccess connection = new(Globals.cn);
             MemberModel model = new();
@@ -25,7 +21,7 @@ namespace Esta_AFCentral
             Console.WriteLine("Enter your surname: ");
             model.LastName = Console.ReadLine();
             Console.WriteLine("Enter your position (Facilitator/Intern): ");
-            model.Position = Console.ReadLine();
+            model.Position = Console.ReadLine().ToLower();
             Console.WriteLine("Enter your email");
             model.Email = Console.ReadLine(); 
             Console.WriteLine("Enter your phone number");
@@ -34,10 +30,6 @@ namespace Esta_AFCentral
             model.ProgrammeName = Console.ReadLine();
 
             connection.insert(model.FirstName, model.LastName, model.Position, model.Email, model.Phone, model.ProgrammeName);
-            Console.WriteLine("Would you like to make another entry (Y/N): ");
-            string anotherEntry = Console.ReadLine();
-
-            return anotherEntry.ToUpper();
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.Data.SqlClient;
 
 namespace DataAccess
 {
-    public class AFCentralAccess
+    public class AFCentralAccess //private access test here
     {
         public AFCentralAccess(string myString) 
         {
@@ -28,11 +28,11 @@ namespace DataAccess
                     cmd.Parameters.AddWithValue("@Position", position);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@phone", phone);
-                    //programme table 
                     cmd.Parameters.AddWithValue("@ProgrammeName", ProgrammeName);
 
                     cn.Open();
                     cmd.ExecuteNonQuery();
+                    cn.Close();
                 }
             }
         }   
